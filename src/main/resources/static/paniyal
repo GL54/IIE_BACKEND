@@ -1,0 +1,41 @@
+<div class="courses-block">
+              <div class="inner-box">
+                <div class="info-box">
+                  <div class="thumb">
+                    <img
+                      src="image/civil-course.png "
+                      alt="" 
+                    />
+                  
+                  </div>
+                </div>
+                <br><br><br><br><br><br>
+                <div class="px-3">
+                  <div class="text">
+                    <h4>Civil Engineering</h4>
+                    <p class="text-courses-owl">
+                      A civil engineering course equips students to design,
+                      construct, and manage infrastructure for sustainable
+                      development.
+                    </p>
+                  </div>
+                 
+                  <div
+                    class="enrollWrap d-flex align-items-center justify-content-between mt-3 pb-3"
+                  >
+                    <div class="ratingWrap">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                    <div class="enrollBtn">
+                      <button type="button" class="register courseBtn">
+                        Enroll now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

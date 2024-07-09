@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Your Eligibility Score</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff; /* Set the background color to white */
+        }
+        .logo {
+            margin: 20px 0;
+        }
+        .eligibility-box {
+            width: 100%;
+            max-width: 755px;
+            height: 28px;
+            background-color: hwb(34 49% 3%);
+            position: relative;
+            margin: 20px 0;
+            border-radius: 40px;
+            margin-top: 10px;
+        }
+        .eligibility-percentage {
+            height: 100%;
+            background: linear-gradient(90deg, #F15D24 0%, #F6991B 100%);
+            width: 0%;
+            border-radius: 40px;
+        }
+        .percentage-text {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+        form {
+            width: 100%;
+            max-width: 755px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: transparent; /* Set the background color to transparent */
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-field {
+            width: calc(50% - 10px);
+            height: 50px;
+            padding: 10px;
+            border: 1px solid #F36F22; /* Change the border color to #F36F22 */
+            border-radius: 10px;
+            color: #767676; 
+            outline: none; /* Remove focus outline */
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .form-field-third {
+            width: calc(33.33% - 10px);
+            height: 46px;
+            padding: 10px;
+            border: 1px solid #F36F22; /* Change the border color to #F36F22 */
+            border-radius: 10px;
+            color: #767676;
+            outline: none; /* Remove focus outline */
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .check-eligible-text {
+            font-family: Abril Fatface;
+            font-size: 40px;
+            font-weight: 800;
+            color: #C73E3E;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .submit-button {
+            width: 150px;
+            padding: 10px;
+            background: linear-gradient(90deg, #f15d24 0%, #f6991b 100%);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600 !important;
+            margin: 0 auto;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .form-field,
+            .form-field-third {
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .check-eligible-text {
+                font-size: 30px;
+            }
+            .submit-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="image/logomain.png" alt="Logo" class="logo">
+    <h2 class="check-eligible-text">Check your eligibility score</h2>
+
+    <div class="eligibility-box">
+        <div class="eligibility-percentage" id="eligibility-percentage"></div>
+        <div class="percentage-text" id="percentage-text">0%</</div>
+    </div><br>
+
+    <form id="eligibility-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+            <input type="text" class="form-field" id="name" placeholder="Name" required>
+            <select class="form-field" id="course" placeholder="Course" required>
+                <option value="">Select Course</option>
+                <!-- Add course options here -->
+                <option>Aeronautical Engineering</option>
+                <option>Agriculture Engineering</option>
+                <option>Air conditioning engineering</option>
+                <option>Architecture Engineering</option>
+                <option>Automobile Engineering</option>
+
+                /*B*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+    
+                <option>Biological Engineering</option>
+                <option>Biotechnology Engineering</option>
+                <option>Building technology Engineering</option>
+
+                /*C*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+
+
+                <option>Ceramic Engineering</option>
+                <option>Chemical Engineering</option>
+                <option> Civil Engineering</option>
+                <option>Communication Engineering</option>                    
+                <option>Computer hardware & networking Engineering</option>
+                <option>Computer science Engineering</option>
+                <option>Construction Engineering</option>
+
+                /*D*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+                <option>Drilling Engineering</option>
+
+                /*E*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+                <option>E-Commerce Engineering</option>
+                <option>Electrical & Electronics Engineering</option>
+                <option>Electrical Engineering</option>
+                <option>Electronics & Communication  Engineering</option>
+                <option>Electronics & Instrumentation  Engineering</option>
+                <option>Electronics & Telecommunication Engineering</option>
+                <option>Electronics Engineering</option>
+                <option>Environmental Engineering</option>
+
+                /*F*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+
+                <option>Fashion Design Engineering</option>
+                <option>Fire & Safety Engineering</option>
+                <option>Food Technology Engineering</option>
+
+                /*H*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+
+                <option>Hardware Engineering</option>
+                <option>Horticulture Engineering</option>
+
+                /*I*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+                <option>Industrial Engineering</option>
+                <option>Information Technology Engineering</option>
+                <option>Instrumentation & Control Engineering</option>
+                <option>Instrumentation Engineering</option>
+                <option>Interior Designing Engineering</option>
+
+                /*L*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+                <option>Leather Technology Engineering</option>
+
+                /*M*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+                <option>Manufacturing  Engineering</option>
+                <option>Marine Engineering</option>
+                <option>Material Engineering</option>
+                <option>Mechanical Engineering</option>
+                <option>Mechatronics Engineering</option>
+                <option>Metallurgy Engineering</option>
+                <option>Mine survey Engineering</option>
+                <option>Mining Engineering</option>
+
+                /*N*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+
+                <option>Networking Engineering</option>
+
+                /*P*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+                <option>Petroleum Engineering</option>
+                <option>Plastic Technology Engineering</option>
+                <option>Polymer Engineering</option>
+                <option>Power Engineering</option>
+                <option>Printing Technology Engineering</option>
+                <option>Production Engineering</option>
+
+                /*S*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+                <option>Safety Engineering</option>
+                <option>Shipbuilding Engineering</option>
+                <option>Software Engineering</option>
+                <option>Sound Engineering</option>
+                <option>Structural Engineering</option>
+                <option>Surveying Engineering</option>
+
+                /*T*/ /*///////////////////////////////////////////////////////////////////////////////////////////////**/
+
+             <option>Telecommunication Engineering</option>
+             <option>Tool & Die Engineering</option>
+             <option>Transportation Engineering</option>
+             <option>Textile Engineering</option>
+                <!-- ... other options ... -->
+            </select>
+        </div>
+        <div class="form-row">
+            <input type="email" class="form-field" id="email" placeholder="Email" required>
+            <input type="text" class="form-field" id="number" placeholder="Number" required>
+        </div>
+        <div class="form-row">
+            <select class="form-field-third" id="age" disabled>
+                <option value="">Select Age</option>
+                <option value="22-64">22-64</option>
+                <option value="64+">64+</option>
+            </select>
+            <select class="form-field-third" id="qualification" disabled>
+                <option value="">Select Qualification</option>
+                <option value="10th">10th</option>
+                <option value="graduation">Graduation</option>
+                <option value="diploma">Diploma</option>
+            </select>
+            <select class="form-field-third" id="experience" disabled>
+                <option value="">Select Experience</option>
+                <option value="less-3yr">Less than 3 years</option>
+                <option value="above-3yr">Above 3 years</option>
+            </select>
+        </div>
+        <button type="submit" class="submit-button">SUBMIT</button>
+    </form>
+
+    <script>
+        function calculatePercentage() {
+            let age = document.getElementById('age').value;
+            let qualification = document.getElementById('qualification').value;
+            let experience = document.getElementById('experience').value;
+            let totalPercentage = 0;
+
+            if (age === '22-64') {
+                totalPercentage += 40;
+            } else if (age === '64+') {
+                totalPercentage += 20;
+            }
+
+            if (qualification === '10th') {
+                totalPercentage += 20;
+            } else if (qualification === 'graduation') {
+                totalPercentage += 22;
+            } else if (qualification === 'diploma') {
+                totalPercentage += 25;
+            }
+
+            if (experience === 'less-3yr') {
+                totalPercentage += 10;
+            } else if (experience === 'above-3yr') {
+                totalPercentage += 40;
+            }
+
+            totalPercentage = Math.min(totalPercentage, 100);
+
+            document.getElementById('eligibility-percentage').style.width = totalPercentage + '%';
+            document.getElementById('percentage-text').textContent = totalPercentage + '%';
+        }
+
+        function checkFormCompletion() {
+            let name = document.getElementById('name').value.trim();
+            let course = document.getElementById('course').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let number = document.getElementById('number').value.trim();
+
+            let isFormCompleted = name && course && email && number;
+
+            document.getElementById('age').disabled = !isFormCompleted;
+            document.getElementById('qualification').disabled = !isFormCompleted;
+            document.getElementById('experience').disabled = !isFormCompleted;
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            calculatePercentage();
+            let percentage = document.getElementById('percentage-text').textContent;
+            percentage = parseInt(percentage, 10);
+            window.location.href = `response.html?percentage=${percentage}`;
+        }
+
+        document.getElementById('name').addEventListener('input', checkFormCompletion);
+        document.getElementById('course').addEventListener('input', checkFormCompletion);
+        document.getElementById('email').addEventListener('input', checkFormCompletion);
+        document.getElementById('number').addEventListener('input', checkFormCompletion);
+
+        document.getElementById('age').addEventListener('change', calculatePercentage);
+        document.getElementById('qualification').addEventListener('change', calculatePercentage);
+        document.getElementById('experience').addEventListener('change', calculatePercentage);
+    </script>
+
+</body>
+</html>

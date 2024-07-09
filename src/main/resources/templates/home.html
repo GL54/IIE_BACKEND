@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IIECENTRE</title>
+<link rel="stylesheet" href="../css/style.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.theme.default.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+</head>
+<body>
+	<header class="container">
+		<nav class="navbar navbar-expand-lg bg-transparent navbar-animated">
+			<div class="container-fluid navbar-icons">
+				<!-- Icon on the left side -->
+				<a href="#"> <img src="image/left-icon.png" alt="Icon Left"
+					style="padding-top: 0px; padding-bottom: 11px" width="50px"
+					height="60px">
+				</a> <a class="navbar-brand d-none" href="#">Navbar</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav w-100 align-items-center">
+						<li class="nav-item w-100"><a  th:href="@{/home/{id}(id=${id})}"  class="nav-link active"
+							aria-current="page" >Home
+							</a>
+							</li>
+						<li class="nav-item w-100"><a class="nav-link"
+							href="FAQ.html">FAQ</a></li>
+						<li class="nav-item w-100"><a class="nav-link"
+							href="application-form.html">Admissions</a></li>
+						<li class="nav-item w-100"><a
+							class="navbar-brand d-flex align-items-center justify-content-center"
+							href="#"> <img src="image/iiecentrelogo.png" alt=""
+								style="height: 149px; width: 145px">
+						</a></li>
+						<li class="nav-item w-100"><a class="nav-link"
+							href="coursesbtech.html">Courses</a></li>
+						<li class="nav-item w-100"><a class="nav-link" href="#footer">Contact</a>
+						</li>
+						<li class="nav-item w-100"><a class="nav-link" th:href="@{/loginPage/{id}(id=${id})}">Profile</a></li>
+					</ul>
+				</div>
+				<!-- Icon on the right side -->
+				<a href="#" id="rightIcon"> <img src="image/right-icon.png"
+					alt="Icon Right" style="padding-top: 5px; padding-bottom: 11px"
+					width="50px" height="65px">
+				</a>
+			</div>
+		</nav>
+	</header>
+
+	
+	<!-- Sidebar Menu -->
+	<div th:if="${id == 0}">
+	<div class="side-menu" id="sideMenu">
+		<button class="close-btn" id="closeBtn">&times;</button>
+		<p class="sidemenu-heading">IIE Kerala Centre</p>
+		<br>
+		<center>
+			<img src="../image/sidemenu-image.png" alt="" style="height: 81px; width: 80px">
+		</center>
+		<p class="sidemenu-guest">Guest testing</p>
+		<center>
+			<a href="signup.html"><button type="submit" class="sidemenu-button-signup">
+					<b>Sign Up</b>
+				</button></a>
+		</center>
+		<br>
+		<hr class="sidemenu-line-1">
+
+
+		<ul>
+			<li><a href="#container enquirybox" class="list-in-sidemenu"><img
+					src="image/sidemenu-enquieries.png" alt=""
+					style="height: 17px; width: 18px"> &nbsp;&nbsp; &nbsp; &nbsp;
+					&nbsp; Enquiries</a></li>
+			<li><a href="#" class="list-in-sidemenu"><img
+					src="image/sidemenu-gallary.png" alt=""
+					style="height: 17px; width: 18px"> &nbsp;&nbsp; &nbsp; &nbsp;
+					&nbsp; Gallery</a></li>
+			<li><a href="#" class="list-in-sidemenu"><img
+					src="image/sidemenu-vision.png" alt=""
+					style="height: 18px; width: 14px"> &nbsp;&nbsp; &nbsp; &nbsp;
+					&nbsp; Vision, Mission & Motto</a></li>
+		</ul>
+	</div>
+	</div>
+	
+	
+	 <!-- Sidebar Menu -->
+	<div th:if="${id > 0}">
+  <div class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <p class="sidemenu-heading">IIE Kerala Centre</p>
+  
+    <center><img src="image/sidemenu-image.png" alt="" style="height: 81px; width: 80px"></center> 
+    <!--changed-->
+    <p class="sidemenu-guest"><p th:text="${username}"></p></p>
+    <hr class="sidemenu-line">
+    <ul>
+      <li><a href="#" class="list-in-sidemenu"><img src="image/status-sidebar.png" alt="" style="height: 18px; width: 18px">
+        &nbsp;&nbsp;   Application Status</a></li>
+
+        <li><a href="#" class="list-in-sidemenu"><img src="image/approval-sidemenu.png" alt="" style="height: 18px; width: 18px">
+          &nbsp;&nbsp;   Approvals & Recognition</a></li>
+
+          <li><a href="#" class="list-in-sidemenu"><img src="image/download-sidemenu.png" alt="" style="height: 18px; width: 18px">
+            &nbsp;&nbsp; Download</a></li>
+  
+            <li><a href="#" class="list-in-sidemenu"><img src="image/examination-sidemenu.png" alt="" style="height: 18px; width: 18px">
+              &nbsp;&nbsp; Examination Result</a></li>         
+             
+              <li><a href="#" class="list-in-sidemenu"><img src="image/sidemenu-enquieries.png" alt="" style="height: 17px; width: 18px">
+                &nbsp;&nbsp;   Enquiries</a></li>
+
+                <li><a href="#" class="list-in-sidemenu"><img src="image/fee-payment-sidemenu.png" alt="" style="height: 15px; width: 18px">
+                  &nbsp;&nbsp; Fee Payment</a></li>  
+
+                  <li><a href="#" class="list-in-sidemenu"><img src="image/sidemenu-gallary.png" alt="" style="height: 17px; width: 18px">
+                    &nbsp;&nbsp;  Gallery</a></li>
+
+
+                  <li><a href="#" class="list-in-sidemenu"><img src="image/rti-sidemenu.png" alt="" style="height: 18px; width: 18px">
+                    &nbsp;&nbsp; RTI Information & Reply</a></li> 
+
+
+                    <li><a href="#" class="list-in-sidemenu"><img src="image/sidemenu-vision.png" alt="" style="height: 18px; width: 14px">
+                      &nbsp;&nbsp;   Vision, Mission & Motto</a></li>
+
+
+                      <li><a href="#" class="list-in-sidemenu"><img src="image/logout-sidemenu.png" alt="" style="height: 16px; width: 18px">
+                        &nbsp;&nbsp; Logout</a></li> 
+    
+
+     
+     
+    </ul>
+  </div>
+	
+	</div>
+
+	<!-- Backdrop -->
+	<div class="backdrop" id="backdrop"></div>
+
+
+
+
+
+
+	<!-- Main Content -->
+	<section class="container-fluid banner m_btm">
+		<div class="container bg-certificateimage">
+			<div class="container bg-bannerimage">
+				<div class="content">
+					<div class="text-center">
+						<h3>Your bright future at every turn</h3>
+						<h1>Accept the Path That will Ensure</h1>
+						<p class="text-center">Explore a vast library of courses and
+							take your knowledge to new heights. Learn at your own pace,
+							empower your future.</p>
+						<div
+							class="d-flex align-items-center justify-content-center gap-2 mt-3">
+							<button class="register" type="submit">
+								<a class="buttonfrontreg" href="application-form.html">Register</a>
+								<img src="image/registericon-black.png" class="iconreg" /> <img
+									src="image/registericon-white.png" class="iconreg-hover" />
+							</button>
+							<button class="howitworks" type="button">
+								<a class="buttonfrontarrow" href="academic-membership.html">How
+									it works</a> <img src="image/arrow-up-right-black.png"
+									class="arrow" /> <img src="image/arrow-up-right-white.png"
+									class="arrow-hover" />
+							</button>
+						</div>
+						<div class="testimonial-img">
+							<img src="image/Testimonial.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="container-fluid about m_btm">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-6">
+					<div>
+						<img class="w-100" src="image/about-image.png" />
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="about-text">
+						<p class="knowaboutus">Know about Us</p>
+						<h2>
+							Indian Institution of <br> Engineers
+						</h2>
+						<p class="paragraph">
+							The Indian Institution of Engineers (IIE) is a pivotal
+							organization dedicated to advancing professionals in Engineering
+							& Technology fields. Established to elevate engineering
+							standards, IIE offers diverse membership programs, including
+							diploma courses such as DIPIIE/DMIIE/TMIIE, equivalent to B.Tech
+							through its recognized AMIIE program. <span class="more-text">
+								The Indian Institution of Engineers (IIE) is a pivotal
+								organization dedicated to advancing professionals in Engineering
+								& Technology fields. Established to elevate engineering
+								standards, IIE offers diverse membership programs, including
+								diploma courses such as DIPIIE/DMIIE/TMIIE, equivalent to B.Tech
+								through its recognized AMIIE program.<br> Embracing online
+								education, IIE conducts Degree & Diploma level examinations in
+								various engineering disciplines,providing opportunities for
+								individuals to upgrade their qualifications and enhance their
+								employment status. Recognized by the Government of India, IIE
+								issues membership certificates to qualifying members under
+								Section-8 Act 2013.
+							</span> <a href="#" class="read-more">Read More <img
+								src="image/readmore.png" class="read-more-arrow" /></a> <a href="#"
+								class="read-less">Read Less <img src="image/readless.png"
+								class="read-less-arrow" /></a>
+						</p>
+						<button class="howitworks" type="button">
+							<a class="buttonfrontarrow" href="application-form.html">
+								Apply online</a> <img src="image/arrow-up-right-black.png"
+								class="arrow" /> <img src="image/arrow-up-right-white.png"
+								class="arrow-hover" />
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<section class="container-fluid exploremore m_btm">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-12 col-md-6">
+					<h2>
+						Engineer Your <span>Future</span>: Join Us Anywhere, Anytime!
+					</h2>
+				</div>
+				<div class="col-12 col-md-6">
+					<a class="d-flex align-items-center gap-2" href="#">
+						<h3>Explore More</h3> <i><img src="image/arrow.png"
+							style="width: 30px;" /></i>
+					</a>
+					<p>The Indian Institution of Engineers (IIE) is a pivotal
+						organization dedicated to advancing professionals in Engineering &
+						Technology fields.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-md-4">
+					<div class="exploreCard">
+						<span> <img src="image/explore-icon-1.png" alt="" />
+						</span>
+						<div>
+							<h3>Flexible Learning</h3>
+							<p class="m-0">Customisation of the educational experience is
+								made possible by flexible learning, which adjusts to individual
+								needs.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-4">
+					<div class="exploreCard flip">
+						<span> <img src="image/explore-icon-2.png" alt="" />
+						</span>
+						<div>
+							<p class="m-0">"Enhance your abilities with continuous
+								practice and learning, striving for improvement every day."</p>
+							<h3>Improve Your Skills</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-4">
+					<div class="exploreCard">
+						<span> <img src="image/explore-icon-3.png" alt="" />
+						</span>
+						<div>
+							<h3>Home study</h3>
+							<p class="m-0">Customisation of the educational experience is
+								made possible by flexible learning, which adjusts to individual
+								needs.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<section class="container-fluid testimonial m_btm">
+		<div class="container">
+			<div
+				class="d-flex flex-column align-items-center justify-content-center">
+				<h3>Build a better Future</h3>
+				<h2>Students Say About Us</h2>
+			</div>
+			<div class="row justify-content-center align-items-center">
+				<div class="col-10 col-md-12">
+					<div class="testimonial-carousel owl-carousel owl-theme">
+						<!-- Testimonial Block -->
+
+
+						<div class="testimonial-block">
+							<div class="inner-box">
+								<div class="text">“It was a life-changing event to receive
+									the Indian Institution of Engineers certification! I completed
+									my Civil Engineering degree and certificate with confidence
+									thanks to the thorough curriculum and professional advice. I
+									appreciate the priceless information and abilities I've
+									acquired, which have advanced my profession”</div>
+								<div class="info-box">
+									<div class="thumb">
+										<img src="image/testimony-img-1.png" alt="" />
+									</div>
+									<h4 class="name">Krishna Das</h4>
+									<span class="designation">Civil Engineering</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Testimonial Block -->
+						<div class="testimonial-block">
+							<div class="inner-box">
+								<div class="text">"Thanks to the Indian Institution of
+									Engineers, I've earned my Instrumentation Engineering
+									certificate! I am grateful for the top-notch education and
+									supportive team that empowered me to excel in my field. I
+									highly recommend it for aspiring engineers!"</div>
+								<div class="info-box">
+									<div class="thumb">
+										<img src="image/testimony-img-2.png" alt="" />
+									</div>
+									<h4 class="name">Kudrath Elahi</h4>
+									<span class="designation">Instrumentation Engineering</span>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="testimonial-block">
+							<div class="inner-box">
+								<div class="text">"Hello, I'm Pradeep. My experience at
+									the Indian Institution of Engineers was truly transformative.
+									With their guidance, I earned my Electrical Engineering
+									certificate, opening doors to endless opportunities. Grateful
+									for the journey!"</div>
+								<div class="info-box">
+									<div class="thumb">
+										<img src="image/testimony-img-2.png" alt="" />
+									</div>
+									<h4 class="name">Pradeep Kumar</h4>
+									<span class="designation">Electrical Engineering</span>
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="testimonial-block">
+							<div class="inner-box">
+								<div class="text">"Hi, I'm Saravanan. Thanks to the Indian
+									Institution of Engineers, now I hold a Civil Engineering
+									Diploma certificate. Grateful for the supportive environment
+									and quality education that paved the way for my success!"</div>
+								<div class="info-box">
+									<div class="thumb">
+										<img src="image/testimony-img-2.png" alt="" />
+									</div>
+									<h4 class="name">K Saravanan</h4>
+									<span class="designation">Civil Engineering Diploma</span>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- Testimonial Block -->
+						<div class="testimonial-block">
+							<div class="inner-box">
+								<div class="text">"Thrilled to have earned my Petroleum
+									Engineering certificate from the Indian Institution of
+									Engineers Institute! Their comprehensive program and dedicated
+									guidance provided the perfect foundation for my career in the
+									oil and gas industry. Highly recommend!"</div>
+								<div class="info-box">
+									<div class="thumb">
+										<img src="image/testimony-img-3.png" alt="" />
+									</div>
+									<h4 class="name">Shujathulla Khan</h4>
+									<span class="designation">Petroleum Engineering</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container-fluid popular-courses m_btm">
+		<div class="container">
+			<div class="d-flex align-items-center justify-content-between">
+				<div>
+					<h3>Explore Now</h3>
+					<h2>Popular Courses</h2>
+				</div>
+				<div class="">
+					<ul class="nav nav-pills d-flex gap-2 align-items-center">
+						<li class="nav-item"><a class="register courseBtn active"
+							aria-current="page" href="">B TECH/ AMIIE</a></li>
+						<li class="nav-item"><a class="register courseBtn" href="">DIPLOMA/
+								TMIIE</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row justify-content-center align-items-center">
+				<div class="popular-courses-carousel owl-carousel owl-theme">
+					<!-- Testimonial Block -->
+					<div class="courses-block">
+						<div class="inner-box">
+							<div class="info-box">
+								<div class="thumb">
+									<img
+										src="https://images.unsplash.com/photo-1715987587174-b8be6a743337?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+										alt="" /> <span> <i><img
+											src="image/user.png" alt="" /></i> 250 Students
+									</span>
+								</div>
+							</div>
+							<div class="px-3">
+								<div class="text">
+									<h4>Civil Engineering</h4>
+									<p>A civil engineering course equips students to design,
+										construct, and manage infrastructure for sustainable
+										development.</p>
+								</div>
+								<div
+									class="enrollWrap d-flex align-items-center justify-content-between mt-3 pb-3">
+									<div class="ratingWrap">
+										<span class="fa fa-star checked"></span> <span
+											class="fa fa-star checked"></span> <span
+											class="fa fa-star checked"></span> <span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</div>
+									<div class="enrollBtn">
+										<button type="button" class="register courseBtn">
+											Enroll now</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonial Block -->
+					<div class="courses-block">
+						<div class="inner-box">
+							<div class="info-box">
+								<div class="thumb">
+									<img
+										src="https://images.unsplash.com/photo-1715987587174-b8be6a743337?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+										alt="" /> <span> <i><img
+											src="image/user.png" alt="" /></i> 250 Students
+									</span>
+								</div>
+							</div>
+							<div class="px-3">
+								<div class="text">
+									<h4>Civil Engineering</h4>
+									<p>A civil engineering course equips students to design,
+										construct, and manage infrastructure for sustainable
+										development.</p>
+								</div>
+								<div
+									class="enrollWrap d-flex align-items-center justify-content-between mt-3 pb-3">
+									<div class="ratingWrap">
+										<span class="fa fa-star checked"></span> <span
+											class="fa fa-star checked"></span> <span
+											class="fa fa-star checked"></span> <span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</div>
+									<div class="enrollBtn">
+										<button type="button" class="register courseBtn">
+											Enroll now</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonial Block -->
+					<div class="courses-block">
+						<div class="inner-box">
+							<div class="info-box">
+								<div class="thumb">
+									<img
+										src="https://images.unsplash.com/photo-1715987587174-b8be6a743337?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+										alt="" /> <span> <i><img
+											src="image/user.png" alt="" /></i> 250 Students
+									</span>
+								</div>
+							</div>
+							<div class="px-3">
+								<div class="text">
+									<h4>Civil Engineering</h4>
+									<p>A civil engineering course equips students to design,
+										construct, and manage infrastructure for sustainable
+										development.</p>
+								</div>
+								<div
+									class="enrollWrap d-flex align-items-center justify-content-between mt-3 pb-3">
+									<div class="ratingWrap">
+										<span class="fa fa-star checked"></span> <span
+											class="fa fa-star checked"></span> <span
+											class="fa fa-star checked"></span> <span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</div>
+									<div class="enrollBtn">
+										<button type="button" class="register courseBtn">
+											Enroll now</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonial Block -->
+					<div class="courses-block">
+						<div class="inner-box">
+							<div class="info-box">
+								<div class="thumb">
+									<img
+										src="https://images.unsplash.com/photo-1715987587174-b8be6a743337?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+										alt="" /> <span> <i><img
+											src="image/user.png" alt="" /></i> 250 Students
+									</span>
+								</div>
+							</div>
+							<div class="px-3">
+								<div class="text">
+									<h4>Civil Engineering</h4>
+									<p>A civil engineering course equips students to design,
+										construct, and manage infrastructure for sustainable
+										development.</p>
+								</div>
+								<div
+									class="enrollWrap d-flex align-items-center justify-content-between mt-3 pb-3">
+									<div class="ratingWrap">
+										<span class="fa fa-star checked"></span> <span
+											class="fa fa-star checked"></span> <span
+											class="fa fa-star checked"></span> <span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</div>
+									<div class="enrollBtn">
+										<button type="button" class="register courseBtn">
+											Enroll now</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container-fluid m_btm">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-7">
+					<div class="ourAchievements">
+						<div class="mb-4">
+							<h2>Our Achievements</h2>
+							<p>Unlock Your Potential for Engineering Success and
+								Empowering Innovators.</p>
+						</div>
+						<div class="achievementCounter">
+							<div class="counter">
+								<div class="pre-img">
+									<img src="image/counter-icon-1.svg" alt="" />
+								</div>
+								<div>
+									<div class="counting" data-count="24">0</div>
+									<p>Year of Experience</p>
+								</div>
+							</div>
+							<div class="counter">
+								<div class="pre-img">
+									<img src="image/counter-icon-2.svg" alt="" />
+								</div>
+								<div>
+									<div class="counting" data-count="80000">0</div>
+									<p>Student’s</p>
+								</div>
+							</div>
+							<div class="counter">
+								<div class="pre-img">
+									<img src="image/counter-icon-3.svg" alt="" />
+								</div>
+								<div>
+									<div class="counting" data-count="20000">0</div>
+									<p>People Certified</p>
+								</div>
+							</div>
+							<div class="counter">
+								<div class="pre-img">
+									<img src="image/counter-icon-4.svg" alt="" />
+								</div>
+								<div>
+									<div class="counting" data-count="72">0</div>
+									<p>Courses</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-5">
+					<div>
+						<img class="w-100" src="image/climbingyoursuccess.png" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container-fluid whyChooseUs m_btm">
+		<div class="container">
+			<div class="row align-items-end">
+				<div class="col-12 col-md-5 position-relative">
+					<div class="whyChooseUsimg">
+						<img src="image/girl2.png" alt="" />
+					</div>
+				</div>
+				<div class="col-12 col-md-7">
+					<div class="p-5 d-flex align-items-start flex-column">
+						<h2>Why Choose Us ?</h2>
+						<ul>
+							<li>We are providing more than 2000 certificate courses in
+								areas like business, IT, leisure, and health.</li>
+							<li>We are providing graduate programme (B.E./B. Tech,
+								Diploma). AMIIE/TMIIE</li>
+							<li>Our 24/7 support services are available to guarantee
+								that our students' enquiries are answered.</li>
+						</ul>
+						<button class="howitworks" type="button">
+							Apply Online <img src="image/arrow-up-right.png" class="arrow" />
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="container-fluid m_btm">
+		<div class="container enquirybox">
+			<div class="row mb-3 align-items-center justify-content-between">
+				<div class="col-12 col-md-6">
+					<h2>
+						Ready to Boost your <br> career in Engineering?
+					</h2>
+				</div>
+				<div class="col-12 col-md-6">
+					<p>Complete our Course eligibility Form to see if you qualify
+						for enrollment in our dynamic programs, including distance B. Tech
+						in India. Take the next step with the Indian Institution of
+						Engineers (IIE) today!</p>
+				</div>
+			</div>
+			<form class="enquirybox-form">
+				<div class="row">
+					<div class="col-12 col-md-6 mb-3">
+						<input type="text" class="form-input" placeholder="Name" />
+					</div>
+					<div class="col-12 col-md-6 mb-3">
+						<input type="text" class="form-input" placeholder="Phone" />
+					</div>
+					<div class="col-12 col-md-6 mb-3">
+						<input type="email" class="form-input" placeholder="Email" />
+					</div>
+					<div class="col-12 col-md-6 mb-3">
+						<select class="form-input">
+							<option value="">Select Course</option>
+							<!-- Add course options here -->
+						</select>
+					</div>
+					<div class="col-12 mb-3">
+						<textarea rows="5" class="form-textarea"
+							placeholder="Your message..."></textarea>
+					</div>
+					<div class="d-flex justify-content-center">
+						<button type="submit" class="submit-button">Submit Now</button>
+					</div>
+			</form>
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<footer id="footer" class="container-fluid p-0">
+		<div class="container-fluid p-0">
+			<div class="row m-0">
+				<div class="col-12 col-md-3 py-5 left-footer">
+					<h2>IIE Kerala Centre</h2>
+					<ul class="contact-dtls">
+						<li class="dtl-icons loc"><a href="#">Ponnurunni,
+								Chalikkavattom, Vyttila Ernakulam, Kerala 682019</a></li>
+						<li class="dtl-icons phn"><a href="">+91 8891222500</a></li>
+						<li class="dtl-icons mail"><a href="">enquiry@iiecentre.com</a><br>
+							<a href="">info@iiecentre.com</a><br> <a href="">admin@iiecentre.com</a><br>
+						</li>
+					</ul>
+				</div>
+				<div class="col-12 col-md-9 p-0">
+					<div class="quickLinks">
+						<h6 class="m-0">
+							Quick Links<span><img src="image/arrow-right.svg" alt=""></span>
+						</h6>
+						<div class="d-flex align-items-center gap-5">
+							<a href="">Home</a> <a href="">About</a> <a href="">Course</a> <a
+								href="">Faq</a> <a href="">Contact</a>
+						</div>
+					</div>
+					<div class="quickLinks">
+						<h6 class="m-0">
+							Information<span><img src="image/arrow-right.svg" alt=""></span>
+						</h6>
+						<div class="d-flex align-items-center gap-5">
+							<a href="">Examination Result</a> <a href="">Enquiries</a> <a
+								href="">Application Status</a> <a href="">Examination</a>
+						</div>
+					</div>
+					<div class="maps">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.4416722193782!2d76.31961237493509!3d9.980326873373153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080cd677444fbf%3A0xd4262c64427f2336!2sPonnurunni-Chalikkavattom%20Rd%2C%20Vyttila%2C%20Kochi%2C%20Ernakulam%2C%20Kerala%20682028!5e0!3m2!1sen!2sin!4v1716833321410!5m2!1sen!2sin"
+							style="border: 0;" allowfullscreen="" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">copyright. All rights Reserved 2024</div>
+	</footer>
+
+	<script>
+		// Speed scroll to footer on Contact link click
+		document.querySelector('.nav-link[href="#footer"]').addEventListener(
+				'click', function(e) {
+					e.preventDefault();
+					document.querySelector('#footer').scrollIntoView({
+						behavior : 'auto', // 'auto' for instant scrolling, can also try 'smooth' if a very short scroll duration is desired
+						block : 'start' // Aligns the footer to the top of the viewport
+					});
+				});
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/owl.carousel.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+
+
+	<!-- JavaScript for Sidebar Toggle -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const sideMenu = document.getElementById('sideMenu');
+			const backdrop = document.getElementById('backdrop');
+			const rightIcon = document.getElementById('rightIcon');
+			const closeBtn = document.getElementById('closeBtn');
+
+			rightIcon.addEventListener('click', function() {
+				sideMenu.style.right = '0'; // Slide in sidebar from right
+				backdrop.style.display = 'block'; // Show backdrop
+				document.body.style.overflow = 'hidden'; // Prevent scrolling
+			});
+
+			closeBtn.addEventListener('click', function() {
+				sideMenu.style.right = '-314px'; // Slide out sidebar to right
+				backdrop.style.display = 'none'; // Hide backdrop
+				document.body.style.overflow = 'auto'; // Allow scrolling
+			});
+
+			backdrop.addEventListener('click', function() {
+				sideMenu.style.right = '-314px'; // Slide out sidebar to right
+				backdrop.style.display = 'none'; // Hide backdrop
+				document.body.style.overflow = 'auto'; // Allow scrolling
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

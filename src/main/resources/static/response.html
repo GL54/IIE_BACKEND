@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility Score</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff; /* Set the background color to white */
+        }
+        .logo {
+            margin: 20px 0;
+        }
+        .result-box {
+            width: 100%;
+            max-width: 755px;
+            height: 150px;
+            background-color: #f1f1f1;
+            position: relative;
+            margin: 20px 0;
+            border-radius: 0 0 100% 100%;
+        }
+        .result-percentage {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            border-radius: 0 0 100% 100%;
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 50%);
+        }
+        .percentage-text {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .eligibility-message {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="image/logomain.png" alt="Logo" class="logo">
+    <h2 class="check-eligible-text">Your Eligibility Score</h2>
+
+    <div class="result-box">
+        <div class="result-percentage" id="result-percentage"></div>
+        <div class="percentage-text" id="percentage-text">0%</div>
+    </div>
+    <div class="eligibility-message" id="eligibility-message"></div>
+
+    <script>
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        const percentage = parseInt(getParameterByName('percentage'), 10);
+        const resultPercentage = document.getElementById('result-percentage');
+        const percentageText = document.getElementById('percentage-text');
+        const eligibilityMessage = document.getElementById('eligibility-message');
+
+        if (percentage > 70) {
+            resultPercentage.style.backgroundColor = 'green';
+            eligibilityMessage.textContent = 'You are eligible for certification!';
+        } else if (percentage >= 50) {
+            resultPercentage.style.backgroundColor = 'yellow';
+            eligibilityMessage.textContent = 'You have moderate eligibility for certification.';
+        } else {
+            resultPercentage.style.backgroundColor = 'red';
+            eligibilityMessage.textContent = 'You are not eligible for certification.';
+        }
+
+        percentageText.textContent = percentage + '%';
+        resultPercentage.style.height = (percentage > 50 ? 50 : percentage) + '%';
+    </script>
+
+</body>
+</html>
