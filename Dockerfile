@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package —DskipTests
 
 FROM openjdk:17
-COPY -—from=build /target/iieweb-0.0.1-SNAPSHOT.jar demo.jar
+COPY -—from=build /target/iieweb-0.0.1-SNAPSHOT.jar iieweb.jar
 EXPOSE 8080
-ENTRYPOINT ["java"," —jar" , "demo.jar"]
+ENTRYPOINT ["java"," —jar" , "iieweb.jar"]
